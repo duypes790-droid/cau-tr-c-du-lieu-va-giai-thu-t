@@ -1,0 +1,40 @@
+public class InsertionSort_Bai2 {
+
+    public static void insertionSort(int[] A) {
+
+        for (int i = 1; i < A.length; i++) {
+
+            int valueToInsert = A[i];
+
+            int holePosition = i;
+
+            while (holePosition > 0 &&
+                    A[holePosition - 1] > valueToInsert) {
+
+                A[holePosition] = A[holePosition - 1];
+                holePosition = holePosition - 1;
+            }
+
+            A[holePosition] = valueToInsert;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        int[] A = {5, 2, 4, 6, 1, 3};
+
+        System.out.println("Mảng trước khi sắp xếp:");
+
+        for (int x : A) {
+            System.out.print(x + " ");
+        }
+
+        insertionSort(A);
+
+        System.out.println("\nMảng sau khi sắp xếp:");
+
+        for (int x : A) {
+            System.out.print(x + " ");
+        }
+    }
+}
